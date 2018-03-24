@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="bbf5852e-50d6-4dd8-b054-3c93ddb658e2" name="StrategyPattern" linkedPackageId="e3308526-9ecb-4b8d-8e05-467c73fd1604" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="b7ee33c3-0035-4988-a4a2-4094e84222c2">
+      <profileInstance Id="304558a4-4de7-4623-bd13-53e07cfd4247" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="945c174e-e653-4c30-ace6-e1fd5074a698">
+      <profileInstance Id="33b296e9-07f1-4884-b3eb-4d2dd1718b74" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="e60f56ca-f1e6-4bcc-826a-541019fd1771" name="IPayment" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="1fc11e4d-c24d-4ea3-8494-12dd3d5813d8" />
+        <ownedOperations>
+          <operation Id="e83295be-363b-4173-a836-fdbc988f9d73" name="Pay" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="36623c10-5dd9-4494-9abf-8907e260dc14" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a1d9c549-9647-4db7-8785-cbfae6311a34" name="amount" direction="In" isUnique="false">
+                  <elementDefinition Id="0463e162-f4c6-4bca-b38b-b817dfe3bdd7" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="6bf19120-aca1-44ae-9d8f-d731c6fcca07" name="PayPalPayment" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b60ce843-d5cc-4f38-8047-42c11258313f" />
+        <suppliersInternal>
+          <interfaceRealization Id="54e60d77-b1a6-40c0-9625-5709042689d7">
+            <interfaceMoniker Id="e60f56ca-f1e6-4bcc-826a-541019fd1771" LastKnownName="IPayment" />
+            <elementDefinition Id="a2e9cb61-88d9-49b9-96a3-cdb605ed899f" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="c501294d-a409-4b54-9aed-059d09cf8439" name="email" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="848208c4-d286-4ba2-9997-4493dccff6b1" />
+          </property>
+          <property Id="88054066-ed28-4a68-b7a5-20b0d6ed3a57" name="password" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="23a43611-b42a-4533-a5fc-983325a6a3c7" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="3c0daf70-dee8-4da7-9da3-66260fde6b58" name="Pay" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b9d4a4dc-ada6-4fe0-9550-b718dc60eb9b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4acbfbd4-b14e-4ae5-820e-8942e9ba203f" name="amount" direction="In" isUnique="false">
+                  <elementDefinition Id="c8127eeb-8931-4eee-bf47-fa28f3a25090" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a381328f-ece3-4195-8d40-2597f1e2ea71" name="CreditCardPayment" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="df95bdaf-2bd3-48ad-ad99-2e23d4b66ed6" />
+        <suppliersInternal>
+          <interfaceRealization Id="58bf5b8f-2c4e-4215-88f8-e4715781b077">
+            <interfaceMoniker Id="e60f56ca-f1e6-4bcc-826a-541019fd1771" LastKnownName="IPayment" />
+            <elementDefinition Id="7dd21df7-eccd-4d21-bff7-ce61c3f9532b" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="832edcc2-d02e-414b-aa3c-11aac7fc9c5c" name="creditCardNumber" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ee36728a-4b67-44be-a081-0ee97d563e59" />
+          </property>
+          <property Id="fb77a788-dd14-425d-9a38-a17afe72c6c9" name="cardHolderName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f006e85e-2b29-4bf8-bf7b-1ac7f2942d4b" />
+          </property>
+          <property Id="e95122f8-d50a-45af-9c49-109d7c94f3dc" name="ccv" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4e9121ae-4831-419d-a9ac-8d8e9c20527b" />
+          </property>
+          <property Id="2d76bda3-023c-4936-ada2-5fcc1da002d0" name="expirayDate" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="28bde767-8072-449e-9ff0-9daadd45fd4a" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="fa3a5217-fdd6-4da3-a20f-4b745a786871" name="Pay" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="77b15a89-fac5-4d4e-b2da-89a48486e109" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="535ce9f1-2757-4c34-9d45-26ab91677efa" name="amount" direction="In" isUnique="false">
+                  <elementDefinition Id="8825575e-5746-48d5-b41e-62a4916349aa" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bc2a2b28-97a6-44a8-b0cf-70b4f7266638" name="CashPayment" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="66b0b5a1-28ef-4381-a8b1-7dde6bda9d50" />
+        <suppliersInternal>
+          <interfaceRealization Id="5903447a-ac28-4621-98d0-bfb5718bf40b">
+            <interfaceMoniker Id="e60f56ca-f1e6-4bcc-826a-541019fd1771" LastKnownName="IPayment" />
+            <elementDefinition Id="e2d1932c-1387-42d4-90d3-5bc8f999a075" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="0e6bfe34-8cca-46af-adfe-1bad98ce6cd0" name="name" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="be55e3f2-6c39-40aa-8f59-5b34e7f0ad77" />
+          </property>
+          <property Id="27d8144e-1fc7-4dad-af0b-b7c907f3b5b9" name="address" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="94595ab7-e374-4873-b8f1-2c051ba06504" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="52162238-5c6b-4699-add1-af25ee3ac5cb" name="Pay" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bd6a7dfa-7bbd-4dd8-8139-38793e53443d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2b3aa6d7-25cb-4cea-aaba-97f53fc47543" name="amount" direction="In" isUnique="false">
+                  <elementDefinition Id="58ad0aa2-b34a-47de-a6ed-b71fac72ac84" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="64fce495-4a33-4fcf-a031-515097ad96b0" name="ShoppingCart" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="7aaa52a2-c097-4ac4-b633-9dc68315fda9" />
+        <suppliersInternal>
+          <dependency Id="213d12c5-d36a-4ab2-a670-26dacab65359">
+            <interfaceMoniker Id="e60f56ca-f1e6-4bcc-826a-541019fd1771" LastKnownName="IPayment" />
+            <elementDefinition Id="74860e70-b78e-4076-8228-1a10320bfc75" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="b655b9eb-5203-4536-86d9-6fbc7a9b1977" name="Items" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3dc10d14-109c-4728-b04f-c6d6b18f821c" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="00517f07-858b-46e0-879a-d81af6360459" name="CalculateOrderAndPay" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="eef85781-7077-44a6-b027-75042e7781ea" />
+          </operation>
+          <operation Id="d184ec04-58ce-4b91-a9bb-476ac81b12af" name="ShoppingCart" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7d54215e-8504-4806-b1bf-23cca6b14139" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3094439b-d11d-4877-a7d9-e847b8a0ed63" name="IPayment" direction="In" isUnique="false">
+                  <elementDefinition Id="6ae92059-f9ce-4ee3-8845-8dad1e50d53b" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="e3308526-9ecb-4b8d-8e05-467c73fd1604" name="StrategyPatternModeling">
+    <elementDefinition Id="315b6992-d852-470c-81ca-73a50c199a6c" />
+  </package>
+</logicalClassDesignerModel>

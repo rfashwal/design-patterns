@@ -1,1 +1,90 @@
-﻿ 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="06b26eab-4f91-4fe1-8400-3b26d188bf24" name="StrategyPattern_" linkedPackageId="3b1a867e-24a5-48b0-bcc9-da40d97d16d2" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="7706433b-94b1-4c07-b009-cb0fa14872b8">
+      <profileInstance Id="be061514-8da6-4ac2-b21d-1da8a922a1fe" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="cc7fdae6-efca-459a-a32a-92d860bdab55">
+      <profileInstance Id="774174ca-cb26-4ae6-97b7-7c3471ea9795" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="b92e6f8a-5f42-4c15-bbe2-a49a71630df1" name="Context" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a9370a0e-e4bb-44dc-b633-85530ad786f7" />
+        <suppliersInternal>
+          <dependency Id="2b90de45-38f6-490c-8049-ef6e4eb3d7f2">
+            <interfaceMoniker Id="87c1cfe2-ca5f-4de8-af18-b6d93f110081" LastKnownName="IStrategy" />
+            <elementDefinition Id="59229cd8-dac1-46f4-b90a-ed296a8d7e1b" />
+          </dependency>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="dd58e02f-8d23-4fa8-9d07-18e0ba2fdff0" name="DoSomething" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0dacec2d-0bcc-49a6-93a8-f4161a6c25e4" />
+          </operation>
+          <operation Id="8ca70c1f-3b05-4fc3-961e-01e23982535f" name="ctor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="af51c745-1156-41e7-9195-bf6c5fc20093" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="79a6fc5d-be80-49f3-a634-166bf5719bee" name="IStrategy" direction="In" isUnique="false">
+                  <elementDefinition Id="49c478c6-ccfd-4b32-95c9-eddb1c918de5" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="87c1cfe2-ca5f-4de8-af18-b6d93f110081" name="IStrategy" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4cf09387-c92a-41a5-9e4c-3c4d57e9d599" />
+        <ownedOperations>
+          <operation Id="31c3cec8-66ec-410c-93ae-86ada73ea7b7" name="PerformWork" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ae087a66-3b75-47b3-87f3-d76be95c4e35" />
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="51d9aaaa-4522-4217-a6e1-a648873801ad" name="ConcreteStrategyA" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6d23e049-e9de-4ed3-83a8-6c9abbcba000" />
+        <suppliersInternal>
+          <interfaceRealization Id="921696b4-75fd-41e9-af84-3c45089980ed">
+            <interfaceMoniker Id="87c1cfe2-ca5f-4de8-af18-b6d93f110081" LastKnownName="IStrategy" />
+            <elementDefinition Id="4eaf4b38-88b5-4101-91d9-7466d3cae436" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="498be6a0-29ab-4948-8d91-4387686c8d60" name="PerformWork" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ffc3ebd6-5962-49bd-a988-6090bd1ef5f1" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8d1b3e66-64f5-49e0-8821-89fc647bdc9c" name="ConcreteStrategyB" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="e7224777-3e76-4fbe-ba1a-061bdb5c0b55" />
+        <suppliersInternal>
+          <interfaceRealization Id="d2900c27-8515-4396-aff5-d053d9b59468">
+            <interfaceMoniker Id="87c1cfe2-ca5f-4de8-af18-b6d93f110081" LastKnownName="IStrategy" />
+            <elementDefinition Id="ad2d2454-9a1d-420c-ab61-dbb783294c45" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="ed14897a-7159-4f85-a48a-76a99b92e18c" name="PerformWork" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c9ced5b7-1ac4-496d-aab4-062f547e9f82" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="3b1a867e-24a5-48b0-bcc9-da40d97d16d2" name="StrategyPatternModeling">
+    <elementDefinition Id="315b6992-d852-470c-81ca-73a50c199a6c" />
+  </package>
+</logicalClassDesignerModel>
