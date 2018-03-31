@@ -34,7 +34,7 @@ Don’t be overwhelmed by their count. We will cover only the most used patterns
 
 ### Behavioral Patterns
 
-* **Strategy:** Encapsulate algorithms within a class and make them interchangeable
+* [**Strategy:**](https://github.com/rfashwal/design-patterns/tree/master/DesignPatternsSimplified/Behavioral%20Patterns/Strategy%20Pattern) Encapsulate algorithms within a class and make them interchangeable
 * **Observer:** Notify dependent objects of state changes
 * **State:** Change object behavior depending on its state
 * **Iterator:** Give sequential access to elements in a collection
